@@ -4,8 +4,6 @@ import { signup, login, addHistory, updateHistory } from "../controllers/authCon
 
 const router = express.Router()
 
-
-//User Authentication routes
 router.post("/signup", signup)
 router.post("/login", login)
 router.post("/history", addHistory)
@@ -19,4 +17,3 @@ router.patch("/cancel/:id", cancelBus)
 
 export default router
 
-// mongodb+srv://shreyopaul403:shreyopaul403@cluster0.uieelqe.mongodb.net/

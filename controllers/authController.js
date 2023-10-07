@@ -18,9 +18,6 @@ export const signup = async (req, res) => {
 
 export const login = async (req, res) => {
     try {
-        // const { id, name, pic, status } = req.body
-
-
         const result = await usersSchema.find(req.body)
         console.log("RESULT: ", result)
 
@@ -39,7 +36,6 @@ export const addHistory = async (req, res) => {
             throw new Error('User not found');
         }
         else {
-            // console.log(user)
             user.history.push({
                 _id: bus._id,
                 name: bus.name,
@@ -70,7 +66,6 @@ export const updateHistory = async (req, res) => {
             throw new Error('User not found');
         }
         else {
-            // console.log(user)
             const seatArr = user.history[indexToRemove].seat
             const busID = user.history[indexToRemove]._id
             user.history.splice(indexToRemove, 1);
