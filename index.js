@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 dotenv.config({path: '.env'})
 import express from 'express'
 import cors from 'cors'
-import taskRoutes from "./routes/taskRoutes.js"
+import allRoutes from "./routes/allRoutes.js"
 import './DB/connection.js'
 
 const app = express()
@@ -19,7 +19,7 @@ app.use(express.urlencoded({extended: true}))
 //     res.send("Server running")
 // })
 
-app.use("/", taskRoutes)
+app.use("/", allRoutes)
 
 
 app.listen(process.env.PORT || PORT, ()=> {
